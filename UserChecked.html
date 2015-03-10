@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script type="text/javascript">			
+			var arrValue = [];	
+//dasdasdadasdawd
+//sadsadasdasd			
+			function checkOn(id)
+			{				
+				if(arrValue.length == 0)
+				{
+					arrValue[0] = document.getElementById(id).value;
+				}
+				else
+				{
+				countElements  = arrValue.length;
+				for (var i = 0; i < countElements; i++)
+					{						
+						if (arrValue[i] == document.getElementById(id).value)
+						{
+							if(document.getElementById(id).checked == false)							
+							arrValue.splice(i,1);
+							var flag = 1;
+							break;
+						}						
+						flag = 0;
+					}
+				if(flag == 0)
+				{					
+					arrValue[arrValue.length] = document.getElementById(id).value;						
+				}				
+				}						
+				alert(arrValue);
+			}
+         </script>
+    </head>
+    <body>
+		<input id="checkBox1" onchange="checkOn(this.id)" type= "checkBox" value="Значение 1"/>Выбор 1<br>
+		<input id="checkBox2" onchange="checkOn(this.id)" type= "checkBox" value="Значение 2"/>Выбор 2<br>
+		<input id="checkBox3" onchange="checkOn(this.id)" type= "checkBox" value="Значение 3"/>Выбор 3<br>
+		<input id="checkBox4" onchange="checkOn(this.id)" type= "checkBox" value="Значение 4"/>Выбор 4<br>
+        <input type="button" onclick="click_button1()" value="Просто кнопка"/>
+    </body> 
+</html>
